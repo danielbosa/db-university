@@ -1,0 +1,17 @@
+SELECT
+
+1. SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = 1990;
+2. SELECT * FROM `courses` WHERE `cfu` > 10;
+3. SELECT * FROM `students` WHERE (YEAR(CURRENT_DATE()) - YEAR(`date_of_birth`)) > 30;
+4. SELECT * FROM `courses` WHERE `period` = "I SEMESTRE" AND `year` = 1;
+5. SELECT * FROM `exams` WHERE `date` = "2020-06-20" AND `hour` > 14;
+6. SELECT * FROM `degrees` WHERE `level` = "magistrale";
+7. SELECT COUNT(*) AS "num_dipartimenti" FROM `departments`;
+8. SELECT COUNT(*) AS "no_phone:" FROM `teachers` WHERE `phone` IS NULL;
+
+GROUP
+
+1. SELECT COUNT(*) AS "iscritti",YEAR(`enrolment_date`) FROM `students` GROUP BY YEAR(`enrolment_date`);
+2. SELECT COUNT(*) AS "same_address",`office_address` FROM `teachers` GROUP BY `office_address`;
+3. SELECT AVG(`vote`) AS "esame_media", `exam_id` FROM `exam_student` GROUP BY `exam_id`;
+4. SELECT COUNT(*) AS "corsi_laurea", `department_id` FROM `degrees` GROUP BY `department_id`;
